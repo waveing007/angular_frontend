@@ -1,0 +1,45 @@
+<div class="add-main">
+    <h2 class="text-center">Edit Registration</h2>
+    <form [formGroup]="editReg" novalidate class="form">
+     
+
+     <input type="hidden" formControlName="id_record" name="ID">
+
+        <div class="form-group">
+            <label for="id_student"> รหัสนิสิต :</label>
+            <input type="text" formControlName="id_student" placeholder="Students ID" name="id_student" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="editReg.get('id_student').hasError('required') && editReg.get('id_student').touched">
+            Pleas Enter First Name
+        </div>
+
+        <div class="form-group">
+            <label for="id_subject">รหัสวิชา :</label>
+            <input type="text" formControlName="id_subject" placeholder="Subject ID" name="id_subject" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="editReg.get('id_subject').hasError('maxlength') && editReg.get('id_subject').touched">
+            Maximum 12 characters are allowed.
+        </div>
+        <div class="alert alert-danger" *ngIf="editReg.get('id_subject').hasError('required') && editReg.get('id_subject').touched">
+            Pleas Enter Last Name
+        </div>
+
+        <div class="form-group">
+            <label for="grade">เกรด :</label>
+            <input type="text" formControlName="grade" placeholder="grade" name="grade" class="form-control">
+        </div>
+       
+
+
+        <div>
+            <button class="btn btn-success" (click)="update()">Edit Registration</button>
+        </div>
+
+        <div>
+            <a routerLink="/view" class="btn btn-primary">View Registration</a>
+        </div>
+    </form>
+
+
+</div>
+

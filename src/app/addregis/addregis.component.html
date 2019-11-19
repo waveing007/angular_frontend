@@ -1,0 +1,32 @@
+<div class="add-main">
+    <h2 class="text-center">Add Registration</h2>
+    <form [formGroup]="addForm" novalidate class="form">
+         
+
+
+        <div class="form-group">
+            <label for="id_student">รหัสนิสิต:</label>
+            <input type="text" formControlName="id_student" placeholder="" name="id_student" class="form-control">
+        </div>
+       
+
+        <div class="form-group">
+            <label for="id_subject">รหัสวิชา :</label>
+            <input type="text" formControlName="id_subject" placeholder="" name="id_subject" class="form-control">
+        </div>
+        
+
+        <div class="form-group">
+            <label for="grade">เกรด :</label>
+            <input type="text" formControlName="grade" placeholder="" name="grade" class="form-control">
+        </div>
+
+        
+        <button class="btn btn-success" (click)="onSubmit()">Save</button>
+      
+            <a routerLink="/regis" class="btn btn-primary">back Registration</a>
+        
+    </form>
+
+
+</div>

@@ -1,0 +1,35 @@
+
+
+<nav class="navbar navbar-light bg-light">
+
+        <a class="navbar-brand textz">RERGISTRATION</a>
+        <form class="form-inline">
+
+                <a routerLink="/addregis" class="btn btn-primary">Add</a>
+                <a routerLink="/view" class="btn btn-primary">back</a>
+
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+ 
+
+<div class="row std-list" >
+    <div class="col-md-2 std-list">ลำดับ</div>
+    <div class="col-md-2 std-list">รหัสนิสิต</div>
+    <div class="col-md-2 std-list">รหัสรายวิชา</div>
+    <div class="col-md-2 std-list">สัญลักณ์เกรด</div>
+    <div class="col-md-2 std-list">Edit</div>
+    <div class="col-md-2 std-list">Delete!</div>
+</div>
+
+<div class="row std-list" *ngFor="let std of registration">
+    <div class="col-md-2 std-list">{{std.id_record}}</div>
+    <div class="col-md-2 std-list">{{std.id_student }}</div>
+    <div class="col-md-2 std-list">{{std.id_subject }}</div>
+    <div class="col-md-2 std-list">{{std.grade }}</div>
+    <div class="col-md-2 std-list"><button class="btn btn-success" (click)="edit(std)">EDIT</button></div>
+    <div class="col-md-2 std-list"><button class="btn btn-danger" (click)="delete(std)">Delete!</button></div>
+    
+</div>
+

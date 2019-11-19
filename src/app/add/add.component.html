@@ -1,0 +1,50 @@
+<div class="add-main">
+    <h2 class="text-center">Add Students</h2>
+    <form [formGroup]="addForm" novalidate class="form">
+        <div class="form-group">   
+            <label for="sId">รหัสนิสิต</label>
+          <input type="number" formControlName="sId" placeholder="Students Id" name="sId" class="form-control" >
+        </div> 
+
+
+        
+        <div class="form-group">
+            <label for="fName">  ชื่อ </label>
+            <input type="text" formControlName="fName" placeholder="Students First Name" name="fName" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('fName').hasError('required') && addForm.get('fName').touched">
+            Pleas Enter First Name
+        </div>
+
+        <div class="form-group">
+            <label for="lName">นามสกุล</label>
+            <input type="text" formControlName="lName" placeholder="Students Last Name" name="lName" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('lName').hasError('maxlength') && addForm.get('lName').touched">
+            Maximum 12 characters are allowed.
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('lName').hasError('required') && addForm.get('lName').touched">
+            Pleas Enter Last Name
+        </div>
+
+
+        <div class="form-group">
+            <label for="email">รหัสสาขาวิชา :</label>
+            <input type="email" formControlName="email" placeholder="รหัสวิชา" name="email" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('maxlength') && addForm.get('email').touched">
+            Maximum 30 characters are allowed.
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('required') && addForm.get('email').touched">
+            Pleas Enter Email
+        </div>
+        
+        
+        <button class="btn btn-success" (click)="onSubmit()">Save</button>
+        <div>
+            <a routerLink="/view" class="btn btn-primary">View Student</a>
+        </div>
+    </form>
+
+
+</div>
